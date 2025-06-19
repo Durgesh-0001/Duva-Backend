@@ -5,13 +5,20 @@ import express from "express";
 const app = express();
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://duva-three.vercel.app", // ✅ your production frontend
+];
+
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Change this to your frontend URL
-    methods: ["GET", "POST"], // Allowed request methods
-    credentials: true, // Allow cookies if using JWT
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
+
+
 
 export function getReceiverSocketId(userId) {
   return userSocketMap[userId];
