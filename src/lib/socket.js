@@ -5,6 +5,9 @@ import express from "express";
 const app = express();
 const server = http.createServer(app);
 
+app.set("trust proxy", 1); // ✅ Required for Railway/production
+
+
 const allowedOrigins = [
   "http://localhost:5173",
   "https://duva-three.vercel.app", // ✅ your production frontend
