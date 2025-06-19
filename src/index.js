@@ -26,9 +26,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
   })
 );
-app.get("/", (req, res) => {
-  res.send("Backend is working!");
-});
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
