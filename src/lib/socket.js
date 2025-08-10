@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://duva-s8hn.vercel.app", // Change this to your frontend URL
+    origin: "https://duva-s8hn.vercel.app/login", // Change this to your frontend URL
     methods: ["GET", "POST"], // Allowed request methods
     credentials: true, // Allow cookies if using JWT
   },
